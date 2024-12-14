@@ -1,8 +1,16 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Footer from "./ui/Footer";
+import Header from "./ui/Header";
+import MessageCard from "./components/MessageCard";
+
+const queryClient = new QueryClient();
 function App() {
   return (
-    <>
-      <div className="font-bold text-7xl text-red-500">Tailwind test</div>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <Header />
+      <MessageCard />
+      <Footer />
+    </QueryClientProvider>
   );
 }
 
